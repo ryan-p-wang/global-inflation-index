@@ -20,3 +20,6 @@ inflation <- raw_inflation[raw_inflation$Country.Code!="TWN",]
 #Creating Main Dataset
 main <- cbind(inflation, gdp)
 main <- main[,-c(2, 4, 5, 632:635)]
+
+write.xlsx(main, "/Users/ryanwang/Dropbox/My Mac (Ryan’s MacBook Pro)/Desktop/global-inflation-index/maindata.xlsx")
+
