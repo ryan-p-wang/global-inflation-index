@@ -31,3 +31,6 @@ for(i in 3:616){
         }
 }
 rm(i, month)
+
+write.xlsx(inflation, "/Users/ryanwang/Dropbox/My Mac (Ryan’s MacBook Pro)/Desktop/global-inflation-index/inflation.xlsx"
+           , overwrite = TRUE)
