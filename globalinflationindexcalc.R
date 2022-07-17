@@ -28,7 +28,13 @@ for(t in 3:616){
         
         gii <- append(gii, sum/weight_sum)
 }
+rm(t, c, sum, weight_sum, year)
 
 x_axis <- seq(1971+(1/12), 2022+(1/6), (1/12))
 plot(x_axis, gii, type="l", main="Global Inflation from 1971 to 2022", xlab="Year", ylab="Global Inflation Index")
 
+gii_dataframe <- data.frame(colnames(inflation)[-c(1, 2)], gii)
+colnames(gii_dataframe) <- c("Year/Month", "Global Inflation Index")
+
+write.xlsx(gii_dataframe, "/Users/ryanwang/Dropbox/My Mac (Ryan’s MacBook Pro)/Desktop/global-inflation-index/globalinflationindex.xlsx"
+           , overwrite = TRUE)
